@@ -12,6 +12,7 @@
 
 #ifndef	LIBFT_H
 # define  LIBFT_H
+# include <stddef.h>
 
 int	ft_isalnum(int c);
 int	ft_isalpha(int c);
@@ -34,4 +35,5 @@ int	ft_toupper(int c);
 int	ft_strchr(char *str, int c);
 int	ft_strrchr(char *str, int c);
 int	ft_strncmp(char *str1, char *str2, unsigned int size);
+char *ft_strnstr(const char *s1, const char *s2, size_t len);
 #endif

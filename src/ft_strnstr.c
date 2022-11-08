@@ -1,29 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin@42.fr <astachni>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/08 15:32:14 by marvin@42.f       #+#    #+#             */
-/*   Updated: 2022/11/08 17:21:14 by marvin@42.f      ###   ########.fr       */
+/*   Created: 2022/11/08 17:24:15 by marvin@42.f       #+#    #+#             */
+/*   Updated: 2022/11/08 17:29:36 by marvin@42.f      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-int	ft_strrchr(char *str, int c)
+char *ft_strnstr(const char *s1, const char *s2, size_t len)
 {
 	int	i;
 	int	j;
+	int	k;
 
-	j = NULL;
 	i = 0;
-	while (str[i])
+	while (i < len)
 	{
-		if (str[i] == c)
-			j = i;
+		if (s1[i] == s2[i])
+		{
+			j = 0;
+			k = i;
+			while ( s1[i] == s2[j])
+			{
+				i++;
+				j++;
+			}
+			if (s2[j] == 0)
+				return (s1[i]);
+			i = k;
+		}
 		i++;
 	}
-	return (j);
+	return (NULL);
 }

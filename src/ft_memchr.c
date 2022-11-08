@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin@42.fr <astachni>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/08 15:32:14 by marvin@42.f       #+#    #+#             */
-/*   Updated: 2022/11/08 17:21:14 by marvin@42.f      ###   ########.fr       */
+/*   Created: 2022/11/08 17:10:28 by marvin@42.f       #+#    #+#             */
+/*   Updated: 2022/11/08 17:31:58 by marvin@42.f      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-int	ft_strrchr(char *str, int c)
+void	*ft_memchr(const *void memoryBlock, int searchedChar, size_t size)
 {
 	int	i;
-	int	j;
 
-	j = NULL;
 	i = 0;
-	while (str[i])
+	while (i < size)
 	{
-		if (str[i] == c)
-			j = i;
+		if (memoryBlock[i] == searchedChar)
+		{
+			return (*memoryBlock[i]);
+		}
 		i++;
 	}
-	return (j);
+	return (NULL);
 }

@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: astachni <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: marvin@42.fr <astachni>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 16:11:31 by astachni          #+#    #+#             */
-/*   Updated: 2022/11/07 16:13:30 by astachni         ###   ########lyon.fr   */
+/*   Updated: 2022/11/08 17:20:33 by marvin@42.f      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../libft.h"
 
 void	*ft_memset(void *pointer, int c, int size)
 {
@@ -20,5 +22,5 @@ void	*ft_memset(void *pointer, int c, int size)
 		((unsigned char *)pointer) = c;
 		i++;
 	}
-	return (b);
+	return (c);
 }

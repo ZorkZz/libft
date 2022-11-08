@@ -6,9 +6,11 @@
 /*   By: marvin@42.fr <astachni>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 14:40:20 by astachni          #+#    #+#             */
-/*   Updated: 2022/11/08 14:49:07 by marvin@42.f      ###   ########.fr       */
+/*   Updated: 2022/11/08 17:20:51 by marvin@42.f      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../libft.h"
 
 void	ft_strlcat(char *dest, char *src, int size)
 {

@@ -6,9 +6,11 @@
 /*   By: marvin@42.fr <astachni>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 14:30:31 by astachni          #+#    #+#             */
-/*   Updated: 2022/11/08 15:23:24 by marvin@42.f      ###   ########.fr       */
+/*   Updated: 2022/11/08 17:20:59 by marvin@42.f      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../libft.h"
 
 void	ft_strlcpy(char *dest, char *src, int size)
 {

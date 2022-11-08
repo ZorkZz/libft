@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../libft.h"
+
 void	ft_bzero(void *str, int size)
 {
 	int	i;
@@ -17,6 +19,6 @@ void	ft_bzero(void *str, int size)
 	i = 0;
 	while (i < size)
 	{
-	str[i] = 0;
+		str[i] = 0;
 	}
 }
