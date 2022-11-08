@@ -28,4 +28,10 @@ void	*ft_memmove(void *str1, const void *str2, int n);
 
 int	ft_atoi(char *str);
 void	ft_strlcpy(char *dest, char *src, int size);
+void	ft_strlcat(char *dest, char *src, int size);
+int	ft_tolower(int c);
+int	ft_toupper(int c);
+int	ft_strchr(char *str, int c);
+int	ft_strrchr(char *str, int c);
+int	ft_strncmp(char *str1, char *str2, unsigned int size);
 #endif

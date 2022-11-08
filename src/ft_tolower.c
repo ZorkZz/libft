@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin@42.fr <astachni>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/08 14:30:31 by astachni          #+#    #+#             */
-/*   Updated: 2022/11/08 15:23:24 by marvin@42.f      ###   ########.fr       */
+/*   Created: 2022/11/08 15:26:16 by marvin@42.f       #+#    #+#             */
+/*   Updated: 2022/11/08 15:27:35 by marvin@42.f      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_strlcpy(char *dest, char *src, int size)
+int	ft_tolower(int c)
 {
-	int	i;
-
-	i = 0;
-	while (i < size)
+	if (c >= 'A' && c <= 'Z')
 	{
-		dest[i] = src[i];
-		i++;
+		c += 32;
 	}
-	dest[i] = 0;
+	else if (c == EOF)
+	{
+		return (-1);
+	}
+	return (c);
 }

@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin@42.fr <astachni>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/08 14:30:31 by astachni          #+#    #+#             */
-/*   Updated: 2022/11/08 15:23:24 by marvin@42.f      ###   ########.fr       */
+/*   Created: 2022/11/08 14:40:20 by astachni          #+#    #+#             */
+/*   Updated: 2022/11/08 14:49:07 by marvin@42.f      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_strlcpy(char *dest, char *src, int size)
+void	ft_strlcat(char *dest, char *src, int size)
 {
 	int	i;
+	int	j;
 
+	j = 0;
 	i = 0;
-	while (i < size)
+	while (dest[i])
+		i++;
+	while (src[j])
 	{
-		dest[i] = src[i];
+		dest[i] = src[j];
+		j++;
 		i++;
 	}
 	dest[i] = 0;

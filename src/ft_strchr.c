@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin@42.fr <astachni>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/08 14:30:31 by astachni          #+#    #+#             */
-/*   Updated: 2022/11/08 15:23:24 by marvin@42.f      ###   ########.fr       */
+/*   Created: 2022/11/08 15:29:18 by marvin@42.f       #+#    #+#             */
+/*   Updated: 2022/11/08 15:34:04 by marvin@42.f      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_strlcpy(char *dest, char *src, int size)
+int	ft_strchr(char *str, int c)
 {
 	int	i;
 
 	i = 0;
-	while (i < size)
+	while (str[i])
 	{
-		dest[i] = src[i];
+		if (str[i] == c)
+			return (i);
 		i++;
 	}
-	dest[i] = 0;
+	return (NULL);
 }
