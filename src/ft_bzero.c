@@ -22,5 +22,6 @@ void	ft_bzero(void *str, int size)
 	while (i < size)
 	{
 		str1[i] = 0;
+		i++;
 	}
 }

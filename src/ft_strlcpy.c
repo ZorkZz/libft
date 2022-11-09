@@ -6,7 +6,7 @@
 /*   By: marvin@42.fr <astachni>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 14:30:31 by astachni          #+#    #+#             */
-/*   Updated: 2022/11/08 17:20:59 by marvin@42.f      ###   ########.fr       */
+/*   Updated: 2022/11/09 16:53:37 by marvin@42.f      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_strlcpy(char *dest, char *src, int size)
 	int	i;
 
 	i = 0;
-	while (i < size)
+	while (i <= size)
 	{
 		dest[i] = src[i];
 		i++;

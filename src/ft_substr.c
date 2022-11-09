@@ -1,33 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin@42.fr <astachni>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/09 12:56:15 by marvin@42.f       #+#    #+#             */
-/*   Updated: 2022/11/09 15:42:44 by marvin@42.f      ###   ########.fr       */
+/*   Created: 2022/11/09 13:57:56 by marvin@42.f       #+#    #+#             */
+/*   Updated: 2022/11/09 14:11:24 by marvin@42.f      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "../libft.h"
+#include <stdlib.h>
 
-void	*ft_calloc(size_t count, size_t size)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	void	*alloc;
-	int		len;
+	int		i;
+	int		j;
+	char	*dest;
 
-	alloc = malloc((ft_strlen(count) * (ft_strlen(size)) * sizeof(void)));
-	len = 0;
-	if (alloc == NULL)
+	i = 0;
+	j = start;
+	dest = malloc((sizeof(char *) * i) + 1);
+	if (dest == NULL)
 	{
 		return (NULL);
 	}
-	while (alloc[len])
+	while (i != len)
 	{
-		alloc[len] = 0;
-		len++;
+		det[i] = s[i + j];
+		i++;
 	}
-	return (alloc);
+	return (dest);
 }
