@@ -6,13 +6,13 @@
 /*   By: marvin@42.fr <astachni>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 17:24:15 by marvin@42.f       #+#    #+#             */
-/*   Updated: 2022/11/08 17:29:36 by marvin@42.f      ###   ########.fr       */
+/*   Updated: 2022/11/09 12:49:43 by marvin@42.f      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-char *ft_strnstr(const char *s1, const char *s2, size_t len)
+char	*ft_strnstr(const char *s1, const char *s2, size_t len)
 {
 	int	i;
 	int	j;
@@ -25,7 +25,7 @@ char *ft_strnstr(const char *s1, const char *s2, size_t len)
 		{
 			j = 0;
 			k = i;
-			while ( s1[i] == s2[j])
+			while (s1[i] == s2[j])
 			{
 				i++;
 				j++;

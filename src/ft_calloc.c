@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin@42.fr <astachni>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/08 17:10:28 by marvin@42.f       #+#    #+#             */
-/*   Updated: 2022/11/09 13:09:05 by marvin@42.f      ###   ########.fr       */
+/*   Created: 2022/11/09 12:56:15 by marvin@42.f       #+#    #+#             */
+/*   Updated: 2022/11/09 13:17:18 by marvin@42.f      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "../libft.h"
 
-void	*ft_memchr(const void *memoryBlock, int searchedChar, size_t size)
+void	*ft_calloc(size_t elementCount, size_t elementSize)
 {
-	int	i;
+	void	*alloc;
+	int		len;
 
-	i = 0;
-	while (i < size)
+	alloc = malloc(sizeof(elementCount) * (sizeof(elementSize)));
+	len = 0;
+	while (alloc[len])
 	{
-		if (memoryBlock[i] == searchedChar)
-		{
-			return (*memoryBlock[i]);
-		}
-		i++;
+		alloc[len] = 0;
+		len++;
 	}
-	return (NULL);
+	return (alloc);
 }
