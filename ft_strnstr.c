@@ -6,7 +6,7 @@
 /*   By: marvin@42.fr <astachni>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 17:24:15 by marvin@42.f       #+#    #+#             */
-/*   Updated: 2022/11/10 15:42:27 by marvin@42.f      ###   ########.fr       */
+/*   Updated: 2022/11/10 17:36:23 by marvin@42.f      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 char	*ft_strnstr(const char *s1, const char *s2, size_t len)
 {
-	int		i;
-	int		j;
-	int		k;
-	char	*c;
+	size_t		i;
+	size_t		j;
+	size_t		k;
+	char		*c;
 
 	c = (char *)s1;
 	i = 0;

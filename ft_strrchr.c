@@ -6,18 +6,18 @@
 /*   By: marvin@42.fr <astachni>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 15:32:14 by marvin@42.f       #+#    #+#             */
-/*   Updated: 2022/11/10 15:42:32 by marvin@42.f      ###   ########.fr       */
+/*   Updated: 2022/11/10 17:15:40 by marvin@42.f      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strrchr(char *str, int c)
+char	*ft_strrchr(char *str, int c)
 {
 	int	i;
 	int	j;
 
-	j = NULL;
+	j = -1;
 	i = 0;
 	while (str[i])
 	{
@@ -25,5 +25,7 @@ int	ft_strrchr(char *str, int c)
 			j = i;
 		i++;
 	}
-	return (j);
+	if (j != -1)
+		return (&str[j]);
+	return (NULL);
 }

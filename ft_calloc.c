@@ -6,7 +6,7 @@
 /*   By: marvin@42.fr <astachni>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 12:56:15 by marvin@42.f       #+#    #+#             */
-/*   Updated: 2022/11/10 15:40:25 by marvin@42.f      ###   ########.fr       */
+/*   Updated: 2022/11/10 17:34:55 by marvin@42.f      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	void	*alloc;
+	char	*alloc;
 	int		len;
 
 	alloc = malloc(count * size);

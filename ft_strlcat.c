@@ -6,7 +6,7 @@
 /*   By: marvin@42.fr <astachni>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 14:40:20 by astachni          #+#    #+#             */
-/*   Updated: 2022/11/10 15:42:09 by marvin@42.f      ###   ########.fr       */
+/*   Updated: 2022/11/10 16:54:52 by marvin@42.f      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_strlcat(char *dest, char *src, size_t size)
 {
-	int	i;
-	int	j;
+	size_t	i;
+	size_t	j;
 
 	j = 0;
 	i = 0;

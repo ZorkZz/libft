@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin@42.fr <astachni>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/08 15:26:16 by marvin@42.f       #+#    #+#             */
-/*   Updated: 2022/11/10 17:10:16 by marvin@42.f      ###   ########.fr       */
+/*   Created: 2022/11/10 17:26:04 by marvin@42.f       #+#    #+#             */
+/*   Updated: 2022/11/10 19:27:46 by marvin@42.f      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_tolower(int c)
+int	ft_memcmp(const void *block1, const void *block2, size_t size)
 {
-	if (c >= 'A' && c <= 'Z')
+	size_t	i;
+
+	i = 0;
+	while (i < size)
 	{
-		c += 32;
+		if (*(unsigned char *)(block1 + i) != *(unsigned char *)(block2 + i))
+			return (*(unsigned char *)(block1) - *(unsigned char *)(block2));
 	}
-	return (c);
+	return (0);
 }
