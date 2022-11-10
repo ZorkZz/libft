@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin@42.fr <astachni>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/08 15:32:14 by marvin@42.f       #+#    #+#             */
-/*   Updated: 2022/11/10 15:42:32 by marvin@42.f      ###   ########.fr       */
+/*   Created: 2022/11/08 14:40:20 by astachni          #+#    #+#             */
+/*   Updated: 2022/11/10 15:42:09 by marvin@42.f      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strrchr(char *str, int c)
+void	ft_strlcat(char *dest, char *src, size_t size)
 {
 	int	i;
 	int	j;
 
-	j = NULL;
+	j = 0;
 	i = 0;
-	while (str[i])
+	while (dest[i])
+		i++;
+	while (src[j] && j < size)
 	{
-		if (str[i] == c)
-			j = i;
+		dest[i] = src[j];
+		j++;
 		i++;
 	}
-	return (j);
+	dest[i] = 0;
 }

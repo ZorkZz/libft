@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin@42.fr <astachni>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/08 15:32:14 by marvin@42.f       #+#    #+#             */
-/*   Updated: 2022/11/10 15:42:32 by marvin@42.f      ###   ########.fr       */
+/*   Created: 2022/11/09 13:57:56 by marvin@42.f       #+#    #+#             */
+/*   Updated: 2022/11/10 15:43:19 by marvin@42.f      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strrchr(char *str, int c)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	int	i;
-	int	j;
+	int		i;
+	int		j;
+	char	*dest;
 
-	j = NULL;
 	i = 0;
-	while (str[i])
+	j = start;
+	dest = malloc((sizeof(char *) * i) + 1);
+	if (dest == NULL)
 	{
-		if (str[i] == c)
-			j = i;
+		return (NULL);
+	}
+	while (i != len)
+	{
+		det[i] = s[i + j];
 		i++;
 	}
-	return (j);
+	return (dest);
 }

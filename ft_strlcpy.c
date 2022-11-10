@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin@42.fr <astachni>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/08 15:32:14 by marvin@42.f       #+#    #+#             */
-/*   Updated: 2022/11/10 15:42:32 by marvin@42.f      ###   ########.fr       */
+/*   Created: 2022/11/08 14:30:31 by astachni          #+#    #+#             */
+/*   Updated: 2022/11/10 15:42:05 by marvin@42.f      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strrchr(char *str, int c)
+void	ft_strlcpy(char *dest, char *src, int size)
 {
 	int	i;
-	int	j;
 
-	j = NULL;
 	i = 0;
-	while (str[i])
+	while (i <= size)
 	{
-		if (str[i] == c)
-			j = i;
+		dest[i] = src[i];
 		i++;
 	}
-	return (j);
+	dest[i] = 0;
 }
