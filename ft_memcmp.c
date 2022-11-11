@@ -21,6 +21,7 @@ int	ft_memcmp(const void *block1, const void *block2, size_t size)
 	{
 		if (*(unsigned char *)(block1 + i) != *(unsigned char *)(block2 + i))
 			return (*(unsigned char *)(block1) - *(unsigned char *)(block2));
+		i++;
 	}
 	return (0);
 }

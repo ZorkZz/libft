@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-char	*ft_strchr(char *str, int c)
+char	*ft_strchr(const char *str, int c)
 {
 	int	i;
 
@@ -23,5 +23,7 @@ char	*ft_strchr(char *str, int c)
 			return (&str[i]);
 		i++;
 	}
+	if (str[i] == c)
+		return (&str[i]);
 	return (NULL);
 }
