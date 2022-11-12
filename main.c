@@ -6,7 +6,7 @@
 /*   By: marvin@42.fr <astachni>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 18:49:43 by marvin@42.f       #+#    #+#             */
-/*   Updated: 2022/11/10 19:23:52 by marvin@42.f      ###   ########.fr       */
+/*   Updated: 2022/11/12 20:11:04 by marvin@42.f      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,5 @@
 
 int	main(void)
 {
-	char	str[8];
-
-	printf("%s", ft_memset(str, '8', 7));
+	printf("Le resultat est %s", ft_itoa(154898));
 }
