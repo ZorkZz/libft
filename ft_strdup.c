@@ -6,7 +6,7 @@
 /*   By: marvin@42.fr <astachni>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 13:24:22 by marvin@42.f       #+#    #+#             */
-/*   Updated: 2022/11/10 17:35:10 by marvin@42.f      ###   ########.fr       */
+/*   Updated: 2022/11/12 16:13:06 by marvin@42.f      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ char	*ft_strdup(const char *src)
 	int		i;
 	int		len;
 
-	len = ft_strlen(len);
-	dest = malloc(sizeof(char) * len + 1);
+	len = ft_strlen((char *)src);
+	dest = malloc(sizeof(char) * (len + 1));
 	if (dest == NULL)
 	{
 		return (NULL);
