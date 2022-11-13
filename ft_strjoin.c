@@ -6,7 +6,7 @@
 /*   By: marvin@42.fr <astachni>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 14:19:32 by marvin@42.f       #+#    #+#             */
-/*   Updated: 2022/11/12 16:35:27 by marvin@42.f      ###   ########.fr       */
+/*   Updated: 2022/11/13 15:57:50 by marvin@42.f      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,10 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char	*str;
 	int		i;
 	int		j;
+	int		s1len;
 
-	str = malloc(((ft_strlen((char *)s1) * ft_strlen((char *)s2) + 1) * sizeof(char *)));
+	s1len = ft_strlen((char *)s1);
+	str = malloc(((s1len * ft_strlen((char *)s2) + 1) * sizeof(char *)));
 	i = 0;
 	j = 0;
 	if (str == NULL)

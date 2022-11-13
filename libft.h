@@ -16,15 +16,14 @@
 
 # include <stddef.h>
 # include <stdlib.h>
+# include <unistd.h>
 
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
 int		ft_isascii(int c);
 int		ft_isdigit(int c);
 int		ft_isprint(int c);
-
 int		ft_strlen(char *str);
-
 void	*ft_memset(void *pointer, int c, size_t size);
 void	ft_bzero(void *str, size_t size);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
@@ -32,7 +31,6 @@ void	*ft_memccpy(void *dest, const void *src, int c, size_t size);
 void	*ft_memmove(void *str1, const void *str2, size_t n);
 void	*ft_memchr(const void *str, int c, size_t size);
 int		ft_memcmp(const void *block1, const void *block2, size_t size);
-
 int		ft_atoi(char *str);
 void	ft_strlcpy(char *dest, char *src, int size);
 void	ft_strlcat(char *dest, char *src, size_t size);
@@ -49,4 +47,10 @@ char	*ft_strtrim(char const *s, char const *set);
 char	**ft_split(char const *s, char c);
 char	*ft_itoa(int n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void	ft_striteri(char *s, void (*f)(unsigned int, char*));
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *s, int fd);
+void	ft_putendl_fd(char *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
+
 #endif
