@@ -6,7 +6,7 @@
 /*   By: marvin@42.fr <astachni>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 12:56:15 by marvin@42.f       #+#    #+#             */
-/*   Updated: 2022/11/10 17:34:55 by marvin@42.f      ###   ########.fr       */
+/*   Updated: 2022/11/14 17:31:02 by marvin@42.f      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_calloc(size_t count, size_t size)
 	char	*alloc;
 
 	alloc = malloc(count * size);
-	if (alloc == NULL)
+	if (alloc == NULL || (count > SIZE_MAX / size))
 	{
 		return (NULL);
 	}

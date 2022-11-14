@@ -16,7 +16,7 @@ static size_t	atoi_test(char *str)
 {
 	int		i;
 	size_t	nb;
-	size_t		neg;
+	size_t	neg;
 
 	neg = 1;
 	nb = 0;

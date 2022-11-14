@@ -6,46 +6,75 @@
 /*   By: marvin@42.fr <astachni>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 16:39:49 by marvin@42.f       #+#    #+#             */
-/*   Updated: 2022/11/12 17:10:38 by marvin@42.f      ###   ########.fr       */
+/*   Updated: 2022/11/14 18:06:33 by marvin@42.f      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_len(char *str, char c)
+static int	c_nb(char const *s, char c)
 {
 	int	i;
+	int	j;
 
+	j = 0;
 	i = 0;
-	while (str[i] != c)
+	while (s[i])
+	{
+		if (s[i] && s[i + 1] && s[i] == c && s[i + 1] != c)
+			j++;
 		i++;
-	return (i);
+	}
+	return (j);
+}
+
+static int	lenstr(char const *s, char c, int i)
+{
+	int	j;
+	int	k;
+
+	j = 0;
+	k = 0;
+	while (s[i])
+	{
+		if (k == 0 && s[i] == c)
+		{
+			k++;
+			j++;
+		}
+		if (s[i] == c)
+			return (k - j);
+		i++;
+		k++;
+	}
+	return (k - j);
 }
 
 char	**ft_split(char const *s, char c)
 {
+	char	**strs;
+	int		nbstr;
 	int		i;
 	int		j;
 	int		k;
-	char	**str;
 
 	i = 0;
+	j = 0;
 	k = 0;
+	nbstr = c_nb(s, c);
+	strs = malloc(nbstr + 1 * sizeof(char));
 	while (s[i])
 	{
-		str[k] = malloc((ft_len((char *)&s[i], c) + 1) * sizeof(char));
-		if (!str[k])
-			return (NULL);
-		j = 0;
-		while (str[k][j] && s[i] != c)
+		strs[j] = malloc(lenstr(s, c, i));
+		while (s[i] != c && s[i + 1] != c)
 		{
-			str[k][j] = s[i];
+			strs[j][k] = s[i];
 			j++;
 			i++;
 		}
-		str[k][j] = 0;
+		while (s[i] == c)
+			i++;
 		k++;
-		i++;
 	}
-	return (str);
+	return (strs);
 }

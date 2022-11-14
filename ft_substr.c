@@ -6,7 +6,7 @@
 /*   By: marvin@42.fr <astachni>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 13:57:56 by marvin@42.f       #+#    #+#             */
-/*   Updated: 2022/11/12 16:34:26 by marvin@42.f      ###   ########.fr       */
+/*   Updated: 2022/11/14 17:45:25 by marvin@42.f      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	i = 0;
 	j = start;
-	dest = malloc((sizeof(char *) * i) + 1);
+	dest = malloc((sizeof(char *) * i + 1));
 	if (dest == NULL)
 	{
 		return (NULL);

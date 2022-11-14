@@ -6,7 +6,7 @@
 /*   By: marvin@42.fr <astachni>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 15:32:14 by marvin@42.f       #+#    #+#             */
-/*   Updated: 2022/11/10 17:15:40 by marvin@42.f      ###   ########.fr       */
+/*   Updated: 2022/11/14 18:44:45 by marvin@42.f      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strrchr(char *str, int c)
 
 	j = -1;
 	i = 0;
+	if (c == 0)
+		return (&str[ft_strlen(str)]);
 	while (str[i])
 	{
 		if (str[i] == c)
