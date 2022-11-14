@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	ft_strsame(char	*s, const char *set)
+static int	ft_strsame(char	*s, const char *set)
 {
 	int	i;
 

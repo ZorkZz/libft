@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-void	ft_putnbr(int n, int fd)
+static void	ft_putnbr(int n, int fd)
 {
 	write(fd, &n, 1);
 }

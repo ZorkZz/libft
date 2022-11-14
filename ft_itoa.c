@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	nbr(int n)
+static int	nbr(int n)
 {
 	int	i;
 
@@ -26,13 +26,34 @@ int	nbr(int n)
 	return (i);
 }
 
-int	isneg(char *str, int isneg, int len)
+static int	isneg(char *str, int isneg, int len)
 {
 	if (isneg == 1)
 		str[0] = '-';
 	else
 		len--;
 	return (len);
+}
+
+static char	*intmin(int n)
+{
+	char	str[12];
+
+	str[0] = '-';
+	str[1] = '2';
+	str[2] = '1';
+	str[3] = '4';
+	str[4] = '7';
+	str[5] = '4';
+	str[6] = '8';
+	str[7] = '3';
+	str[8] = '6';
+	str[9] = '4';
+	str[10] = '8';
+	str[11] = 0;
+	if (n == -2147483648)
+		return (str);
+	return (NULL);
 }
 
 char	*ft_itoa(int n)
@@ -42,6 +63,8 @@ char	*ft_itoa(int n)
 	int		len;
 
 	neg = 0;
+	if (intmin(n) != NULL)
+		return (intmin(n));
 	if (n < 0)
 	{
 		n *= -1;
