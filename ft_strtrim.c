@@ -6,7 +6,7 @@
 /*   By: marvin@42.fr <astachni>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 14:55:28 by marvin@42.f       #+#    #+#             */
-/*   Updated: 2022/11/15 18:59:57 by marvin@42.f      ###   ########.fr       */
+/*   Updated: 2022/11/15 20:27:09 by marvin@42.f      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,3 +97,16 @@ char	*ft_strtrim(char const *s, char const *set)
 	str[ft_strlen(str)] = '\0';
 	return (str);
 }
+
+
+
+"     eueervreveve   bwebew   00000" 	input s
+" 0"									input set
+"eueervreveve   bwebew"					output
+wsl
+// #include <stdio.h>
+
+// int	main(void)
+// {
+// 	printf("%s", )
+// }
