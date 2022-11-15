@@ -6,7 +6,7 @@
 /*   By: marvin@42.fr <astachni>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 20:44:25 by marvin@42.f       #+#    #+#             */
-/*   Updated: 2022/11/13 15:44:15 by marvin@42.f      ###   ########.fr       */
+/*   Updated: 2022/11/15 19:10:28 by marvin@42.f      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,3 +28,9 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	}
 	return (str);
 }
+
+#include <stdio.h>
+
+// int	main(void)
+// {
+// }

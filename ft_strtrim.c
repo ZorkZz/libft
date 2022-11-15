@@ -6,7 +6,7 @@
 /*   By: marvin@42.fr <astachni>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 14:55:28 by marvin@42.f       #+#    #+#             */
-/*   Updated: 2022/11/12 17:12:53 by marvin@42.f      ###   ########.fr       */
+/*   Updated: 2022/11/15 18:59:57 by marvin@42.f      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,20 +19,67 @@ static int	ft_strsame(char	*s, const char *set)
 	i = 0;
 	while (s[i] == set[i] && s[i])
 	{
-		if (set[i] == 0)
-			return (i);
+		i++;
 	}
+	if (set[i] == 0)
+		return (i);
 	return (-1);
 }
 
-int	ft_len(char *str)
+static int	charlen(char const *s, char const *set)
 {
 	int	i;
+	int	j;
+	int	nbset;
 
 	i = 0;
-	while (str[i])
+	j = 0;
+	nbset = 0;
+	while (s[i])
+	{
+		j = 0;
+		while (s[i] == set[j])
+		{
+			j++;
+			i++;
+		}
+		if (set[j] == '\0')
+		{
+			i--;
+			nbset++;
+		}
 		i++;
-	return (i);
+	}
+	return (i - (j * nbset));
+}
+
+static char	*trim(char const *s, char const *set, char *str, int i)
+{
+	int	pass;
+	int	j;
+
+	i = 0;
+	j = 0;
+	pass = 0;
+	while (s[i])
+	{
+		if (s[i] == set[0] && pass == 0)
+		{
+			if (ft_strsame ((char *)&s[i], (char *)set) != -1)
+				i += ft_strsame ((char *)&s[i], (char *)set);
+			else
+				i--;
+			pass = 1;
+		}
+		else
+		{
+			str[j] = s[i];
+			j++;
+			pass = 0;
+		}
+		i++;
+	}
+	return (str);
 }
 
 char	*ft_strtrim(char const *s, char const *set)
@@ -43,22 +90,10 @@ char	*ft_strtrim(char const *s, char const *set)
 
 	j = 0;
 	i = 0;
-	str = malloc((ft_len((char *)s) - ft_len((char *)set) + 1) * sizeof(char));
+	str = malloc((charlen(s, set) + 1) * sizeof(char));
 	if (str == NULL)
 		return (NULL);
-	while (s[i])
-	{
-		if (s[i] == set[0])
-		{
-			if (ft_strsame ((char *)&s[i], (char *)set) != -1)
-				i += ft_strsame ((char *)&s[i], (char *)set);
-		}
-		else
-		{
-			str[j] = s[i];
-			j++;
-		}
-		i++;
-	}
+	trim(s, set, str, i);
+	str[ft_strlen(str)] = '\0';
 	return (str);
 }
