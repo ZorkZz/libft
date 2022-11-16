@@ -33,9 +33,9 @@ void	ft_putnbr_fd(int n, int fd)
 		if (n >= 10)
 		{
 			ft_putnbr_fd(n / 10, fd);
-			ft_putnbr(n % 10, fd);
+			ft_putnbr_fd(n % 10, fd);
 		}
 		else if (n < 10)
-			ft_putnbr(n, fd);
+			ft_putnbr('0' + n, fd);
 	}
 }

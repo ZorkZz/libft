@@ -12,101 +12,38 @@
 
 #include "libft.h"
 
-static int	ft_strsame(char	*s, const char *set)
+static int	ft_char_set(char c, char const *set)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
-	while (s[i] == set[i] && s[i])
+	while (set[1])
 	{
+		if (set[i] == c)
+			return (1);
 		i++;
 	}
-	if (set[i] == 0)
-		return (i);
-	return (-1);
-}
-
-static int	charlen(char const *s, char const *set)
-{
-	int	i;
-	int	j;
-	int	nbset;
-
-	i = 0;
-	j = 0;
-	nbset = 0;
-	while (s[i])
-	{
-		j = 0;
-		while (s[i] == set[j])
-		{
-			j++;
-			i++;
-		}
-		if (set[j] == '\0')
-		{
-			i--;
-			nbset++;
-		}
-		i++;
-	}
-	return (i - (j * nbset));
-}
-
-static char	*trim(char const *s, char const *set, char *str, int i)
-{
-	int	pass;
-	int	j;
-
-	i = 0;
-	j = 0;
-	pass = 0;
-	while (s[i])
-	{
-		if (s[i] == set[0] && pass == 0)
-		{
-			if (ft_strsame ((char *)&s[i], (char *)set) != -1)
-				i += ft_strsame ((char *)&s[i], (char *)set);
-			else
-				i--;
-			pass = 1;
-		}
-		else
-		{
-			str[j] = s[i];
-			j++;
-			pass = 0;
-		}
-		i++;
-	}
-	return (str);
+	return (0);
 }
 
 char	*ft_strtrim(char const *s, char const *set)
 {
 	char	*str;
-	int		i;
-	int		j;
+	size_t	i;
+	size_t	start;
+	size_t	stop;
 
-	j = 0;
-	i = 0;
-	str = malloc((charlen(s, set) + 1) * sizeof(char));
-	if (str == NULL)
+	start = 0;
+	stop = ft_strlen(s);
+	while (s[start] && ft_char_set(s[start], set))
+		start ++;
+	while (stop > start && ft_char_set(s[stop - 1], set))
+		stop--;
+	str = malloc(sizeof(char) * (ft_strlen(s)) * (stop - start + 1));
+	if (!str)
 		return (NULL);
-	trim(s, set, str, i);
-	str[ft_strlen(str)] = '\0';
+	while (start < stop)
+		str[i++] = s[start++];
+	str[i] = '\0';
 	return (str);
 }
-
-
-
-"     eueervreveve   bwebew   00000" 	input s
-" 0"									input set
-"eueervreveve   bwebew"					output
-wsl
-// #include <stdio.h>
-
-// int	main(void)
-// {
-// 	printf("%s", )
-// }

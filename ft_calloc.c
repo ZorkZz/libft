@@ -14,8 +14,9 @@
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	char	*alloc;
-
+	char		*alloc;
+	const char	SIZE_MAX = 165;
+	
 	alloc = malloc(count * size);
 	if (alloc == NULL || (count > SIZE_MAX / size))
 	{
