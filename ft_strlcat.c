@@ -6,7 +6,7 @@
 /*   By: marvin@42.fr <astachni>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 14:40:20 by astachni          #+#    #+#             */
-/*   Updated: 2022/11/15 17:39:28 by marvin@42.f      ###   ########.fr       */
+/*   Updated: 2022/11/17 18:42:08 by marvin@42.f      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ size_t	ft_strlcat(char *dest, char *src, size_t size)
 	size_t	destsize;
 
 	i = 0;
+	if ((!dest && size == 0) || (!src && size == 0))
+		return (0);
 	srcsize = ft_strlen(src);
 	destsize = ft_strlen(dest);
 	if (size == 0)

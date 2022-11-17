@@ -6,7 +6,7 @@
 /*   By: marvin@42.fr <astachni>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 13:24:22 by marvin@42.f       #+#    #+#             */
-/*   Updated: 2022/11/15 17:42:07 by marvin@42.f      ###   ########.fr       */
+/*   Updated: 2022/11/17 18:49:44 by marvin@42.f      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,6 @@ char	*ft_strdup(const char *src)
 	if (dest == NULL)
 		return (NULL);
 	dest = ft_memcpy(dest, src, (size_t)len);
-	dest[ft_strlen(dest)] = '\0';
+	dest[len] = '\0';
 	return (dest);
 }
