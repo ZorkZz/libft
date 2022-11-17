@@ -14,7 +14,7 @@
 
 static size_t	atoi_test(char *str)
 {
-	int		i;
+	size_t	i;
 	size_t	nb;
 	size_t	neg;
 
@@ -40,9 +40,9 @@ static size_t	atoi_test(char *str)
 
 int	ft_atoi(char *str)
 {
-	int		i;
-	int		nb;
-	int		neg;
+	size_t		i;
+	int			nb;
+	int			neg;
 
 	neg = 1;
 	nb = 0;
@@ -57,10 +57,9 @@ int	ft_atoi(char *str)
 	else if (str[i] == '+')
 		i++;
 	while (str[i] >= '0' && str[i] <= '9')
-	{
-		nb = nb * 10 + str[i] - 48;
-		i++;
-	}
+		nb = nb * 10 + str[i++] - 48;
+	if (atoi_test(str) == (size_t)-9223372036854775807L -1L)
+		return (0);
 	if (atoi_test(str) != (size_t)(nb * neg))
 		return (-1);
 	return (nb * neg);

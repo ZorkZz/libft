@@ -6,7 +6,7 @@
 /*   By: marvin@42.fr <astachni>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 12:56:15 by marvin@42.f       #+#    #+#             */
-/*   Updated: 2022/11/17 19:35:23 by marvin@42.f      ###   ########.fr       */
+/*   Updated: 2022/11/17 19:47:39 by marvin@42.f      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,17 +25,6 @@ void	*ft_calloc(size_t count, size_t size)
 		return (NULL);
 	}
 	if (count > 0 && size > 0)
-		ft_bzero(alloc, count*size);
+		ft_bzero(alloc, count * size);
 	return (alloc);
 }
-
-// int	main (void)
-// {
-// 	printf("%lu\n", SIZE_MAX);
-// 	// char	*str1 = ft_calloc(0, 0);
-// 	printf("mienne\n");
-// 	char	*str = calloc(0, 0);
-// 	printf("vrai\n");
-// 	char	*str2 = malloc(0 * 0);
-// 	printf("malloc\n");
-// }
