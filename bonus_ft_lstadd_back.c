@@ -3,21 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   bonus_ft_lstadd_back.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zorkz <zorkz@student.42.fr>                +#+  +:+       +#+        */
+/*   By: stachni <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/18 20:04:35 by zorkz             #+#    #+#             */
-/*   Updated: 2022/11/18 20:18:42 by zorkz            ###   ########.fr       */
+/*   Created: 2022/11/18 20:41:31 by stachni           #+#    #+#             */
+/*   Updated: 2022/11/18 20:41:31 by stachni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_listadd_back(t_list **lst, t_list *new)
+void	ft_listadd_back(t_list **lst, t_list *new)
 {
-    t_list  *elm;
+	t_list	*elm;
 
-    elm = malloc(sizeof(*new));
-    elm = new;
-    if(!lst)
-        return (NULL);
+	elm = malloc(sizeof(*new));
+	elm = new;
+	if(!lst)
+		return (NULL);
 }

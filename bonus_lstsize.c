@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bonus_lstsize.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zorkz <zorkz@student.42.fr>                +#+  +:+       +#+        */
+/*   By: astachni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/18 19:56:54 by zorkz             #+#    #+#             */
-/*   Updated: 2022/11/18 19:58:43 by zorkz            ###   ########.fr       */
+/*   Created: 2022/11/18 20:45:22 by astachni          #+#    #+#             */
+/*   Updated: 2022/11/18 20:45:22 by astachni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 int ft_lstsize(t_list *lst)
 {
-    size_t i;
+	size_t	i;
 
-    i = 0;
-    while (lst)
-    {
-        i++;
-        lst = lst->next;
-    }
-    return ((int)i);
+	i = 0;
+	while (lst)
+	{
+		i++;
+		lst = lst->next;
+	}
+	return ((int)i);
 }
