@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin@42.fr <astachni>                    +#+  +:+       +#+        */
+/*   By: zorkz <zorkz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 14:55:28 by marvin@42.f       #+#    #+#             */
-/*   Updated: 2022/11/18 00:11:13 by marvin@42.f      ###   ########.fr       */
+/*   Updated: 2022/11/18 19:59:17 by zorkz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static size_t	ft_stop(char const *s, char const *set)
 	exit = 0;
 	stop = 0;
 	slen = ft_strlen(s);
-	while (slen >= 0)
+	while ((int)slen >= 0)
 	{
 		j = 0;
 		while (set[i])
@@ -71,9 +71,4 @@ char	*ft_strtrim(char const *s, char const *set)
 	}
 	dest = ft_substr(s, start, start - ft_stop(s, set));
 	return (dest);
-}
-
-int	main(void)
-{
-	printf("%s", ft_strtrim("   \t  \n\n \t\t  \n\n\nHello \t  Please\n Trim me !\n   \n \n \t\t\n  ", " \n\t"));
 }
