@@ -6,7 +6,7 @@
 /*   By: marvin@42.fr <astachni>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 16:39:49 by marvin@42.f       #+#    #+#             */
-/*   Updated: 2022/11/17 23:25:46 by marvin@42.f      ###   ########.fr       */
+/*   Updated: 2022/11/19 20:20:57 by marvin@42.f      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,16 @@ static size_t	nbstr(char const *s, char c)
 	i = 0;
 	while (s[i])
 	{
-		if (s[i] == c)
+		while (s[i] == c && s[i])
+		{
+			i++;
+		}
+		if (s[i])
+		{
+			i++;
 			j++;
-		i++;
+		}
+
 	}
 	return (j);
 }
@@ -48,14 +55,11 @@ static size_t	nbchar(char const *s, char c, size_t i)
 	return (j);
 }
 
-static int	ft_strsplit(char const *s, char **dest, char c)
+static int	ft_strsplit(char const *s, char **dest, char c, int index)
 {
-	int	index;
 	int	indexdest;
 	int	firstchar;
 
-	index = 0;
-	firstchar = 0;
 	indexdest = 0;
 	while (s[index])
 	{
@@ -64,13 +68,16 @@ static int	ft_strsplit(char const *s, char **dest, char c)
 		firstchar = index;
 		while (s[index] != c && s[index])
 			index++;
-		dest[indexdest] = ft_substr(s, firstchar, index - firstchar);
-		if (!dest[indexdest])
+		if (index != firstchar)
 		{
-			ft_free(dest, indexdest);
-			return (-1);
-		}
+			dest[indexdest] = ft_substr(s, firstchar, index - firstchar);
+			if (!dest[indexdest])
+			{
+				ft_free(dest, indexdest);
+				return (-1);
+			}
 		indexdest++;
+		}
 	}
 	dest[indexdest] = NULL;
 	return (0);
@@ -82,10 +89,10 @@ char	**ft_split(char const *s, char c)
 
 	if (!s)
 		return (NULL);
-	dest = malloc((nbstr(s, c) + 1) * sizeof(char *));
+		dest = malloc((nbstr(s, c) + 1) * sizeof(char *));
 	if (!dest)
 		return (NULL);
-	if (ft_strsplit(s, dest, c) == -1)
+	if (ft_strsplit(s, dest, c, 0) == -1)
 		return (NULL);
 	return (dest);
 }

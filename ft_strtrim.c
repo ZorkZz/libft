@@ -3,72 +3,83 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zorkz <zorkz@student.42.fr>                +#+  +:+       +#+        */
+/*   By: marvin@42.fr <astachni>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 14:55:28 by marvin@42.f       #+#    #+#             */
-/*   Updated: 2022/11/18 19:59:17 by zorkz            ###   ########.fr       */
+/*   Updated: 2022/11/19 20:23:37 by marvin@42.f      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	ft_stop(char const *s, char const *set)
+static int	my_ass(char const s, char const *set)
 {
-	size_t	slen;
 	size_t	i;
-	size_t	j;
-	size_t	stop;
-	size_t	exit;
 
 	i = 0;
-	exit = 0;
-	stop = 0;
-	slen = ft_strlen(s);
-	while ((int)slen >= 0)
+	while (set[i])
 	{
-		j = 0;
-		while (set[i])
-		{
-			if (s[i] == set[j] && exit + 1 < ft_strlen(set))
-				stop++;
-			while (s[i] != set[j++])
-				exit++;
-		}
+		if (set[i] == s)
+			return (1);
+		i++;
 	}
-	return (stop);
+	return (0);
+}
+
+static size_t	nb_trim_start(char const *s, char const *set)
+{
+	size_t	i;
+	size_t	j;
+	size_t	nbchar;
+
+	nbchar = 0;
+	i = 0;
+	while (s[i] && my_ass(s[i++], set))
+	{
+		nbchar++;
+	}
+	return (nbchar);
+}
+
+static size_t	nb_trim_stop(char const *s, char const *set)
+{
+	size_t	i;
+	size_t	j;
+
+	i = ft_strlen(s);
+	i--;
+	while (s[i] && my_ass(s[i], set) && (int)i > 0)
+	{
+		i--;
+	}
+	i++;
+	return (i);
+}
+
+static char	*cpy(char const *s, size_t start, size_t stop)
+{
+	char	*dest;
+	int		i;
+
+	i = 0;
+	dest = malloc((stop - start + 1) * sizeof(char));
+	if (!dest)
+		return (NULL);
+	while (start <= stop)
+		dest[i++] = s[start++];
+	dest[i] = '\0';
+	return (dest);
 }
 
 char	*ft_strtrim(char const *s, char const *set)
 {
 	char	*dest;
-	size_t	start;
-	size_t	i;
-	size_t	j;
-	size_t	exit;
+	size_t	nbstart;
+	size_t	nbstop;
 
-	exit = 0;
-	i = 0;
-	start = 0;
-	while (s[i])
-	{
-		j = 0;
-		while (set[j])
-		{
-			if (s[i] == set[j] && exit + 1 < ft_strlen(set))
-			{
-				exit = 0;
-				start++;
-			}
-			if (s[i] != set[j])
-			{
-				exit++;
-				if (j == ft_strlen(set))
-					j = 0;
-			}
-			j++;
-		}
-		i++;
-	}
-	dest = ft_substr(s, start, start - ft_stop(s, set));
-	return (dest);
+	if (s == NULL)
+		return (NULL);
+	nbstart = nb_trimstart(s, set);
+	nbstop = nb_trimstop(s, set);
+	return (ft_substr(s, nbstart, nbstop - nbstart));
 }

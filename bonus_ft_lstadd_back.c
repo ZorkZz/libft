@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bonus_ft_lstadd_back.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stachni <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: marvin@42.fr <astachni>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/18 20:41:31 by stachni           #+#    #+#             */
-/*   Updated: 2022/11/18 20:41:31 by stachni          ###   ########.fr       */
+/*   Created: 2022/11/18 20:41:31 by astachni          #+#    #+#             */
+/*   Updated: 2022/11/19 18:47:59 by marvin@42.f      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,6 @@ void	ft_listadd_back(t_list **lst, t_list *new)
 
 	elm = malloc(sizeof(*new));
 	elm = new;
-	if(!lst)
+	if (!lst)
 		return (NULL);
 }
