@@ -6,7 +6,7 @@
 /*   By: marvin@42.fr <astachni>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 17:15:28 by marvin@42.f       #+#    #+#             */
-/*   Updated: 2022/11/14 18:58:52 by marvin@42.f      ###   ########.fr       */
+/*   Updated: 2022/11/19 20:34:39 by marvin@42.f      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static int	nbr(int n)
 	return (i);
 }
 
-static int	isneg(char *str, int isneg, int len)
+static int	is_neg(char *str, int isneg, int len)
 {
 	if (isneg == 1)
 		str[0] = '-';
@@ -78,7 +78,7 @@ char	*ft_itoa(int n)
 	if (!str)
 		return (NULL);
 	str[len + neg] = 0;
-	len = isneg(str, neg, len);
+	len = is_neg(str, neg, len);
 	while (n >= 10)
 	{
 		str[len--] = n % 10 + '0';

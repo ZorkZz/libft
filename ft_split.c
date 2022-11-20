@@ -6,13 +6,13 @@
 /*   By: marvin@42.fr <astachni>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 16:39:49 by marvin@42.f       #+#    #+#             */
-/*   Updated: 2022/11/19 20:20:57 by marvin@42.f      ###   ########.fr       */
+/*   Updated: 2022/11/19 20:40:22 by marvin@42.f      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	nbstr(char const *s, char c)
+static size_t	nb_str(char const *s, char c)
 {
 	size_t	i;
 	size_t	j;
@@ -30,7 +30,6 @@ static size_t	nbstr(char const *s, char c)
 			i++;
 			j++;
 		}
-
 	}
 	return (j);
 }
@@ -42,20 +41,7 @@ static void	ft_free(char **dest, int i)
 	free(dest);
 }
 
-static size_t	nbchar(char const *s, char c, size_t i)
-{
-	size_t	j;
-
-	j = 0;
-	while (s[i] && s[i] != c)
-	{
-		i++;
-		j++;
-	}
-	return (j);
-}
-
-static int	ft_strsplit(char const *s, char **dest, char c, int index)
+static int	ft_strs_plit(char const *s, char **dest, char c, int index)
 {
 	int	indexdest;
 	int	firstchar;
@@ -89,10 +75,10 @@ char	**ft_split(char const *s, char c)
 
 	if (!s)
 		return (NULL);
-		dest = malloc((nbstr(s, c) + 1) * sizeof(char *));
+		dest = malloc((nb_str(s, c) + 1) * sizeof(char *));
 	if (!dest)
 		return (NULL);
-	if (ft_strsplit(s, dest, c, 0) == -1)
+	if (ft_strs_plit(s, dest, c, 0) == -1)
 		return (NULL);
 	return (dest);
 }

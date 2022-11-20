@@ -6,7 +6,7 @@
 /*   By: marvin@42.fr <astachni>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 14:55:28 by marvin@42.f       #+#    #+#             */
-/*   Updated: 2022/11/19 20:23:37 by marvin@42.f      ###   ########.fr       */
+/*   Updated: 2022/11/20 01:42:44 by marvin@42.f      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ static int	my_ass(char const s, char const *set)
 static size_t	nb_trim_start(char const *s, char const *set)
 {
 	size_t	i;
-	size_t	j;
 	size_t	nbchar;
 
 	nbchar = 0;
@@ -44,7 +43,6 @@ static size_t	nb_trim_start(char const *s, char const *set)
 static size_t	nb_trim_stop(char const *s, char const *set)
 {
 	size_t	i;
-	size_t	j;
 
 	i = ft_strlen(s);
 	i--;
@@ -56,30 +54,14 @@ static size_t	nb_trim_stop(char const *s, char const *set)
 	return (i);
 }
 
-static char	*cpy(char const *s, size_t start, size_t stop)
-{
-	char	*dest;
-	int		i;
-
-	i = 0;
-	dest = malloc((stop - start + 1) * sizeof(char));
-	if (!dest)
-		return (NULL);
-	while (start <= stop)
-		dest[i++] = s[start++];
-	dest[i] = '\0';
-	return (dest);
-}
-
 char	*ft_strtrim(char const *s, char const *set)
 {
-	char	*dest;
-	size_t	nbstart;
-	size_t	nbstop;
+	size_t	nb_start;
+	size_t	nb_stop;
 
 	if (s == NULL)
 		return (NULL);
-	nbstart = nb_trimstart(s, set);
-	nbstop = nb_trimstop(s, set);
-	return (ft_substr(s, nbstart, nbstop - nbstart));
+	nb_start = nb_trim_start(s, set);
+	nb_stop = nb_trim_stop(s, set);
+	return (ft_substr(s, nb_start, nb_stop - nb_start));
 }
