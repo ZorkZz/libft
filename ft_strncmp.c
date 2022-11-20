@@ -6,13 +6,13 @@
 /*   By: marvin@42.fr <astachni>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 15:35:48 by marvin@42.f       #+#    #+#             */
-/*   Updated: 2022/11/14 20:51:04 by marvin@42.f      ###   ########.fr       */
+/*   Updated: 2022/11/20 18:49:17 by marvin@42.f      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(char *str1, char *str2, size_t size)
+int	ft_strncmp(char const *str1, char const *str2, size_t size)
 {
 	if (size > ft_strlen(str1))
 		size = ft_strlen(str1) + 1;

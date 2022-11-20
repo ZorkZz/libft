@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static size_t	atoi_test(char *str)
+static size_t	atoi_test(char const *str)
 {
 	size_t	i;
 	size_t	nb;
@@ -38,7 +38,7 @@ static size_t	atoi_test(char *str)
 	return (nb * neg);
 }
 
-int	ft_atoi(char *str)
+int	ft_atoi(char const *str)
 {
 	size_t		i;
 	int			nb;
