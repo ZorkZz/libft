@@ -6,13 +6,13 @@
 /*   By: marvin@42.fr <astachni>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 14:55:28 by marvin@42.f       #+#    #+#             */
-/*   Updated: 2022/11/20 01:42:44 by marvin@42.f      ###   ########.fr       */
+/*   Updated: 2022/11/20 20:40:10 by marvin@42.f      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	my_ass(char const s, char const *set)
+static int	char_comp(char const s, char const *set)
 {
 	size_t	i;
 
@@ -33,7 +33,7 @@ static size_t	nb_trim_start(char const *s, char const *set)
 
 	nbchar = 0;
 	i = 0;
-	while (s[i] && my_ass(s[i++], set))
+	while (s[i] && char_comp(s[i++], set))
 	{
 		nbchar++;
 	}
@@ -46,7 +46,7 @@ static size_t	nb_trim_stop(char const *s, char const *set)
 
 	i = ft_strlen(s);
 	i--;
-	while (s[i] && my_ass(s[i], set) && (int)i > 0)
+	while (s[i] && char_comp(s[i], set) && (int)i > 0)
 	{
 		i--;
 	}

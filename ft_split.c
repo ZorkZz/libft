@@ -6,7 +6,7 @@
 /*   By: marvin@42.fr <astachni>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 16:39:49 by marvin@42.f       #+#    #+#             */
-/*   Updated: 2022/11/19 20:40:22 by marvin@42.f      ###   ########.fr       */
+/*   Updated: 2022/11/20 20:38:21 by marvin@42.f      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,29 +43,29 @@ static void	ft_free(char **dest, int i)
 
 static int	ft_strs_plit(char const *s, char **dest, char c, int index)
 {
-	int	indexdest;
-	int	firstchar;
+	int	index_dest;
+	int	first_char;
 
-	indexdest = 0;
+	index_dest = 0;
 	while (s[index])
 	{
 		while (s[index] == c && s[index])
 			index++;
-		firstchar = index;
+		first_char = index;
 		while (s[index] != c && s[index])
 			index++;
-		if (index != firstchar)
+		if (index != first_char)
 		{
-			dest[indexdest] = ft_substr(s, firstchar, index - firstchar);
-			if (!dest[indexdest])
+			dest[index_dest] = ft_substr(s, first_char, index - first_char);
+			if (!dest[index_dest])
 			{
-				ft_free(dest, indexdest);
+				ft_free(dest, index_dest);
 				return (-1);
 			}
-		indexdest++;
+		index_dest++;
 		}
 	}
-	dest[indexdest] = NULL;
+	dest[index_dest] = NULL;
 	return (0);
 }
 
