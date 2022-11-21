@@ -35,7 +35,7 @@ static int	is_neg(char *str, int isneg, int len)
 	return (len);
 }
 
-static char	*intmin(int n)
+static char	*int_min(int n)
 {
 	char	*str;
 
@@ -66,8 +66,8 @@ char	*ft_itoa(int n)
 	int		len;
 
 	neg = 0;
-	if (intmin(n) != NULL)
-		return (intmin(n));
+	if (int_min(n) != NULL)
+		return (int_min(n));
 	if (n < 0)
 	{
 		n *= -1;
