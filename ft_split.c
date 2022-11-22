@@ -75,7 +75,7 @@ char	**ft_split(char const *s, char c)
 
 	if (!s)
 		return (NULL);
-		dest = malloc((nb_str(s, c) + 1) * sizeof(char *));
+	dest = malloc((nb_str(s, c) + 1) * sizeof(char *));
 	if (!dest)
 		return (NULL);
 	if (ft_strs_plit(s, dest, c, 0) == -1)
