@@ -38,7 +38,7 @@ void	*ft_memchr(const void *str, int c, size_t size);
 int		ft_memcmp(const void *block1, const void *block2, size_t size);
 int		ft_atoi(char const *str);
 size_t	ft_strlcpy(char *dest, const char *src, size_t destsize);
-size_t	ft_strlcat(char *dest, char const *src, size_t size);
+size_t	ft_strlcat(char *dest, const char *src, size_t size);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
 char	*ft_strchr(const char *st, int c);
