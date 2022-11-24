@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin@42.fr <astachni>                    +#+  +:+       +#+        */
+/*   By: astachni@student.42lyon.fr <astachni>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 16:39:49 by marvin@42.f       #+#    #+#             */
-/*   Updated: 2022/11/20 20:38:21 by marvin@42.f      ###   ########.fr       */
+/*   Updated: 2022/11/24 19:36:54 by astachni@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ static size_t	nb_str(char const *s, char c)
 			i++;
 			j++;
 		}
+		while (s[i] && s[i] != c)
+			i++;
 	}
 	return (j);
 }

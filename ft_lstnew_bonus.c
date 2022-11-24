@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   bonus_ft_lstnew.c                                  :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin@42.fr <astachni>                    +#+  +:+       +#+        */
+/*   By: astachni@student.42lyon.fr <astachni>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 20:45:06 by aastachni         #+#    #+#             */
-/*   Updated: 2022/11/19 18:48:38 by marvin@42.f      ###   ########.fr       */
+/*   Updated: 2022/11/24 19:33:26 by astachni@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_list	*ft_lstnew(void *content)
 {
 	t_list	*elm;
 
-	elm = malloc(sizeof(*content));
+	elm = malloc(sizeof(t_list));
 	if (!elm)
 		return (NULL);
 	elm->content = content;
